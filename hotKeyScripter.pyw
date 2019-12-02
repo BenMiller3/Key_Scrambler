@@ -1,6 +1,7 @@
 import random
 import platform
 import subprocess
+import string
 
 startupinfo = None
 if platform.system() == 'Windows':
@@ -27,9 +28,7 @@ def shuffleLetters(alphabet):
         alphabet[x] = temp
     return alphabet
 
-alphabet = ['a','b','c','d','e','f','g','h','i','j',
-       'k','l','m','n','o','p','q','r','s','t',
-       'u','v','w','x','y','z']
+alphabet = [char for char in string.ascii_lowercase]
 
 alphabet = shuffleLetters(alphabet)
 createScript(alphabet)
